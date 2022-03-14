@@ -5,6 +5,7 @@ import Navigation from "components/Navigation";
 import Profile from "routes/Profile";
 
 function AppRouter({isLoggedIn, userObj}){
+    console.log(isLoggedIn);
    return(
        <Router>
            {isLoggedIn && <Navigation/>}
@@ -18,7 +19,7 @@ function AppRouter({isLoggedIn, userObj}){
                :
                <>
                <Route exact path="/" element={<Auth/>}/>
-               <Route path="*" element={<Navigate to="/" />}/>
+               <Route path="*" element={<Navigate replace to="/" />}/>
                </>}
            </Routes>
        </Router>
